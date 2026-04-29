@@ -25,15 +25,17 @@ creacion () {
         echo "La carpeta $NOMBRE ya existe"
     else
         mkdir $NOMBRE
+        echo "Carpeta $NOMBRE creada"
     fi
 }
 
 instalaciones "python3" "yum install python3 -y"
 instalaciones "vim" "yum install vim -y"
 instalaciones "git" "yum install git -y"
-instalaciones "docker" "dnf update -y && sudo dnf install -y docker docker-compose-plugin && sudo systemctl enable --now docker"
+instalaciones "docker" "sudo dnf update -y && sudo dnf install -y docker docker-compose-plugin && sudo systemctl enable --now docker"
 creacion "automation"
 creacion "scripts"
 creacion "app"
 creacion "helper"
 creacion ".gitignore"
+creacion "carpetaPrueba"
